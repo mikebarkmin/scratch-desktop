@@ -9,6 +9,9 @@ mac:
   target:
     - dmg
     - mas
+linux:
+  target: AppImage
+  category: Education
 mas:
   type: distribution
   category: public.app-category.education
