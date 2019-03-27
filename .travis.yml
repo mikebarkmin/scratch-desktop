@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 11
 
-install:
+script:
   - npm install
   - cd ..
   - git clone https://github.com/LLK/scratch-gui.git
@@ -13,8 +13,6 @@ install:
   - npm link
   - cd ../scratch-desktop
   - npm link scratch-gui
-
-script:
   - npm run build
   - PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g')
 
@@ -22,4 +20,4 @@ deploy:
   provider: releases
   api_key: "$API_KEY"
   file: "dist/Scratch Desktop $PACKAGE_VERSION.AppImage"
-  ski_cleanup: true
+  skip_cleanup: true
