@@ -10,7 +10,9 @@ mac:
     - dmg
     - mas
 linux:
-  target: AppImage
+  maintainer: "Mike Barkmin"
+  target:
+    - deb
   category: Education
 mas:
   type: distribution
