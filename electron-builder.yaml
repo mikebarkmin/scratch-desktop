@@ -13,6 +13,7 @@ linux:
   maintainer: "Mike Barkmin"
   target:
     - deb
+    - AppImage
   category: Education
 mas:
   type: distribution
