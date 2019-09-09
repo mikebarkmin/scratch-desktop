@@ -7,7 +7,25 @@ Scratch 3.0 as a standalone desktop application
 ### Prepare `scratch-gui`
 
 This step is temporary: eventually, the `scratch-desktop` branch of the Scratch GUI repository will be merged with
-that repository's main development line. For now, though, there's a separate branch:
+that repository's main development line. For now, though, the `scratch-desktop` branch holds a few changes that are
+necessary for Scratch Desktop to function correctly but are not yet merged into the main development branch.
+
+#### Prepare `scratch-gui`: Quick Start
+
+1. Clone both `scratch-desktop` and `scratch-gui`
+2. `cd scratch-gui`
+   1. `git checkout scratch-desktop`
+   2. `npm install`
+   3. `npm link`
+   4. `cd ..`
+3. `cd scratch-desktop`
+   1. `npm install`
+   2. `npm link scratch-gui`
+   3. `npm run build-gui` or `npm run watch-gui`
+
+Your copy of `scratch-gui` should now be ready for use with Scratch Desktop.
+
+#### Prepare `scratch-gui`: Detailed Version
 
 1. Clone the `scratch-gui` repository if you haven't already.
 2. Switch to the `scratch-desktop` branch with `git checkout scratch-desktop`
@@ -23,7 +41,8 @@ that repository's main development line. For now, though, there's a separate bra
 
 If you have run `npm link scratch-gui` (or equivalent) in the `scratch-desktop` working directory, you may be able to
 accomplish the above by running `npm run build-gui` in the `scratch-desktop` directory instead of using the manual
-steps listed above.
+steps listed above. For active development iteration, try `npm run watch-gui` which will watch for changes and rebuild
+`scratch-gui` incrementally when necessary.
 
 ### Prepare media library assets
 
